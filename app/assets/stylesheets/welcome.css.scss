@@ -1,3 +1,155 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fontawesome-webfont.eot?v=3.2.1');
+  src: url('fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('fontawesome-webfont.woff?v=3.2.1') format('woff'), url('fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.content-wrapper {
+  float: left;
+  width: calc(100% - 400px);
+  position: relative;
+}
+
+.top-banner {
+  height: 10px;
+  width: 100%;
+  background: #FFAC30;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  float: left;
+  background: #fdfdfd;
+  padding: 0 15px 15px;
+  border: solid 1px #ccc;
+  height: calc(100% - 10px);
+  width: 400px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  width: 170px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  background-color: #ccc;
+  border: 1px solid white;
+  line-height: 60px;
+  a {
+    display: block;
+    text-decoration: none;
+    color:  #8C8782;
+    padding: 0 8px;
+    font-size: 18px;
+  }
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: #FFAE30;
+}
+
+//.sidebar-nav li a:active,
+//.sidebar-nav li a:focus {
+//  text-decoration: none;
+//  background: #FFAC30;
+//}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.submenu{
+  height: 100%;
+  list-style: outside none none;
+  padding: 0;
+  position: absolute;
+  right: 13px;
+  top: 1px;
+  width: 200px;
+  border: 3px solid #FFAC30;
+}
+.hidden{
+  visibility: hidden;
+}
+
+.submenu li {
+  background: #ffffff;
+  float: left;
+  padding-left: 30px;
+}
+
+.submenu li a{
+  font-size: 16px;
+}
+.submenu .divider{
+  border-bottom: 1px solid #FFAC30;
+  display: block;
+  width:130px;
+}
+
+.submenu li a:hover{
+  background: #ffffff;
+  color: #8c8782;
+}
+
+.active_bar{
+  background: #FFAC30;
+}

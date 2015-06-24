@@ -7,8 +7,78 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="top-banner"> </div>
+<%# if current_user.present? %>
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li>
+        <a href="#"><i class='fa fa-tachometer'></i> General </a>
+        <ul class="submenu hidden">
+          <li> <a href="#"><i class='fa fa-home'></i> <span>Home</span> </a></li>
+          <li> <a href="#"><i class='fa fa-tachometer'></i> DashBoard </a></li>
+          <li> <span class="divider">  </span> </li>
+          <li> <a href="#"><i class='fa fa-sign-out'></i> <span>Export</span> </a></li>
+          <li> <a href="#"><i class='fa fa-sign-in'></i> Import </a></li>
+          <li> <span class="divider">  </span> </li>
+          <li> <a href="#"><i class='fa fa-trash-o'></i> Reset </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Vendor</a>
+        <ul class="submenu hidden">
+          <li> <a href="#"><i class='fa fa-list'></i> List Of Vendor </a></li>
+          <li> <a href="#"><i class='fa fa-file-o'></i> <span>Create Vendor</span> </a></li>
+          <li> <a href="#"><i class='fa fa-pencil-square-o'></i> <span>Edit Vendor</span> </a></li>
+          <li> <a href="#"><i class='fa fa-trash-o'></i> Remove Vendor </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Purchase</a>
+        <ul class="submenu hidden">
+          <li> <a href="#"><i class='fa fa-list'></i> Purchase List </a></li>
+          <li> <a href="#"><i class='fa fa-file-o'></i> <span>New Purchase</span> </a></li>
+          <li> <a href="#"><i class='fa fa-pencil-square-o'></i> <span>Edit Purchase</span> </a></li>
+          <li> <a href="#"><i class='fa fa-trash-o'></i> Remove Purchase </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Product</a>
+        <ul class="submenu hidden">
+          <li> <a href="#"><i class='fa fa-list'></i> List Of Products </a></li>
+          <li> <a href="#"><i class='fa fa-file-o'></i> <span>New Product</span> </a></li>
+          <li> <a href="#"><i class='fa fa-pencil-square-o'></i> <span>Edit Product</span> </a></li>
+          <li> <a href="#"><i class='fa fa-trash-o'></i> Remove Product </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Sales</a>
+      </li>
+      <li>
+        <a href="#">Transfer</a>
+      </li>
+      <li>
+        <a href="#">Reports</a>
+      </li>
+      <li>
+        <a href="#">Time Entry</a>
+      </li>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+    </ul>
+  </div>
+  <div class="content-wrapper">
+    <%= yield %>
+  </div>
+<%# end %>
 </body>
+<script type="text/javascript">
+    $(document).off('click', '.sidebar-nav a').on('click', '.sidebar-nav a', function () {
+        $('li').children('ul').addClass('hidden');
+        $('li').find('a').removeClass('active_bar');
+        $(this).parent().children('ul').removeClass('hidden');
+        $(this).addClass('active_bar');
+    });
+</script>
 </html>
