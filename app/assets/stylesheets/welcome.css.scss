@@ -43,7 +43,7 @@
   background: #fdfdfd;
   border: 1px solid #CCCCCC;
   border-top: 0px;
-  padding: 0 15px 15px;
+  padding: 0 15px 0 5px;
   min-height: 640px; ;
   width: 400px;
   -webkit-transition: all 0.5s ease;
@@ -122,9 +122,9 @@
   list-style: outside none none;
   padding: 0;
   position: absolute;
-  right: 13px;
+  right: 10px;
   top: 1px;
-  width: 200px;
+  width: 214px;
   border: 3px solid #FFAC30;
 }
 .hidden{
@@ -153,4 +153,15 @@
 
 .active_bar{
   background: #FFAC30;
+}
+
+/* Have to move */
+
+.inventory-title {
+  border-bottom: 2px solid #ffac30;
+  font-family: "Anonymous Pro","Inconsolata","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
+  font-size: 30px;
+  margin: 0 0 10px 0;
+  padding-bottom: 10px;
+  text-align: center;
 }
